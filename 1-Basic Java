@@ -1,0 +1,55 @@
+1) WAP to print Hello Students in Java.
+Code:
+
+public class HelloStudents {
+    public static void main(String[] args) {
+        System.out.println("Hello Students");
+    }
+}
+
+2) WAP to print Hello in the first line and Students in the second line in Java.
+Code:
+
+public class HelloStudents {
+    public static void main(String[] args) {
+        System.out.println("Hello\nStudents");
+    }
+}
+
+3) WAP to print "MySirG" on the screen in Java(Remember to print woth double quotes).
+Code:
+
+public class HelloStudents {
+    public static void main(String[] args) {
+        System.out.println("\"MySirG\"");
+    }
+}
+
+4) WAP to print "Teacher's Day" on the screen in Java (Remember the double quotes).
+Code:
+
+public class HelloStudents {
+    public static void main(String[] args) {
+        System.out.println("\"Teacher's Day\"");
+    }
+}
+
+5) WAP to print the value of an int variable in Java.
+Code:
+
+public class HelloStudents {
+    public static void main(String[] args) {
+        int x=77655;
+        System.out.println(x);
+    }
+}
+
+6) WAP to print the value of a float variable in Java.
+Code:
+
+public class HelloStudents {
+    public static void main(String[] args) {
+        float x=7.5f;
+        System.out.println(x);
+    }
+}
