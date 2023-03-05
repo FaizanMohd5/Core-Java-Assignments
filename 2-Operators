@@ -44,9 +44,40 @@ public class Test {
 
 5) How to identify whether a variable is value type variable or nullable type?
 Ans:
-
+Primitive types are value type variables while non primitive types can be nullable or non-nullable.
+Only reference variables can hold null value, hence reference variables are nullable types and
+value types cannot hold null value.
+If we add [] after a primitive type then it is a reference variable.
 
 6) Why there's a error in java statement - float x=3.5;
 Ans:
+Because value assigned to the variable 'x' is of double data type. 
+But variable is capable of holding a float data type. To assign 
+float value to the variable, use - float x=3.5f;
 
+7) What's the result of expression - 35&83?
+Ans:
 
+35 & 83 = 3
+
+8) What's the result of expression 47|29?
+Ans:
+
+47 | 29 = 63
+
+9) What's the result of expression 76^108?
+Ans:
+
+76 ^ 108 = 32
+
+10) WAP to rotate digits of a number towards right by one position.
+Code:
+public class Test {
+    public static void main(String[] args) {
+        int a,x=5667;
+        System.out.println(x);
+        a=x%10;
+        x=x/10;
+        System.out.println(""+a+x);
+    }
+}
