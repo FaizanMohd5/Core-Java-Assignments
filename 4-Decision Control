@@ -1,0 +1,87 @@
+1) WAP to check if number is divisible by 5 or not.
+
+public class Example {
+    public static void main(String[] args) {
+        int x=5;
+        if(x%5==0)
+            System.out.println(x+" is divisible by 5");
+        else
+            System.out.println(x+" is not divisible by 5");
+    }
+}
+
+2) WAP to check if number is even or odd.
+
+public class Example {
+    public static void main(String[] args) {
+        int x=5;
+        if(x%2==0)
+            System.out.println(x+" is even");
+        else
+            System.out.println(x+" is odd");
+    }
+}
+
+3) WAP to check if number is even or odd without using modulo operator.
+
+public class Example {
+    public static void main(String[] args) {
+        int x=2;
+        if((x&1)==1)
+            System.out.println(x+" is odd");
+        else
+            System.out.println(x+" is even");
+    }
+}
+
+4) WAP to check whether a number is positive or non-positive.
+
+public class Example {
+    public static void main(String[] args) {
+        int x=0;
+        if(x>0)
+            System.out.println(x+" is positive");
+        else
+            System.out.println(x+" is non-positive");
+    }
+}
+
+5) WAP to print greater between two numbers.
+
+public class Example {
+    public static void main(String[] args) {
+        int a=20,b=34;
+        System.out.println((a>b?a:b)+" is greater");
+    }
+}
+
+6) WAP to check whether a given number is positive, negative or zero.
+
+public class Example {
+    public static void main(String[] args) {
+        int x=5;
+        if(x>0)
+            System.out.println(x+" is positive");
+        else if(x<0)
+            System.out.println(x+" is negative");
+        else
+            System.out.println(x+" is zero");
+    }
+}
+
+7) WAP 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
