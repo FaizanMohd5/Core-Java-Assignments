@@ -1,4 +1,5 @@
-1) 
+1) WAP with one char type variable. Assign 'A' in the variable. 
+Now change the value of variable from 'A' to 'B' using increment operator.
 Code:
 public class Test {
     public static void main(String[] args) {
@@ -7,7 +8,7 @@ public class Test {
     }
 }
 
-2)
+2) WAP to find unicode of character '+'.
 Code:
 public class Test {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Test {
     }
 }
 
-3)
+3) WAP to make the last digit of a number stored in a variable as zero.
 Code:
 public class Test {
     public static void main(String[] args) {
@@ -27,5 +28,51 @@ public class Test {
     }
 }
 
-4)
+4) WAP to calculate sum of digits of a given number.
 Code:
+public class Example {
+    public static void main(String[] args) {
+         int x=3431;
+         System.out.println("Sum of all digits is "+((x%10)+((x/10)%10)+(((x/10)/10)%10)+((((x/10)/10)/10)%10)));
+    }
+}
+
+5) What will be result of an expression -5>4>3
+Ans:
+Error: '>' cannot be applied to boolean and int.
+
+6) What will be the value get stored in variable 
+x as a result of an expression - int x=(int)true;
+Ans:
+Error: Inconvertible types; cannot cast 'boolean' to 'int'
+
+7) What will be the value get stored in variable x as a result
+of an expression - int x=!5>-2
+Ans:
+Error: ! cannot be applied to int.
+
+8) What will be the value get stored in variable x as a result
+of an expression - int x=5.5%1.5;
+Ans:
+Error: Incompatible types found: double, required: int
+
+9) Write a program to reverse a three digit number.
+Code:
+public class Example {
+    public static void main(String[] args) {
+        int x=546,a,b,c;
+        a=(x/10)/10; //5
+        b=((x/10)%10)*10; //4
+        c=(x%10)*100;      //6
+        System.out.println("Reverse("+x+") is "+(a+b+c));
+    }
+}
+
+10) Write to print character corresponding to unicode 100.
+Code:
+public class Example {
+    public static void main(String[] args) {
+        char x=100;
+        System.out.println("character of unicode 100 is "+x);
+    }
+}
