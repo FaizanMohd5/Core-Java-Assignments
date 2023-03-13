@@ -137,22 +137,93 @@ Provide methods to set question and display question.
 
 Code:
 
-7) Define a class Course with the fields courseId, courseName, duration fee. Provide setters
+7) Define a class Course with the fields courseId, courseName, duration, fee. Provide setters
 and getters.
 
 Code:
+
+class Course   {
+    int courseId;
+    String courseName;
+    int duration;
+    int fee;
+    void setDetails(int id,String cn,int dur,int fee_)    {
+        courseId=id;
+        courseName=cn;
+        duration=dur;
+        fee=fee_;
+    }
+    void getDetails()   {
+        System.out.println("Course ID: "+courseId);
+        System.out.println("Course Name: "+courseName);
+        System.out.println("Duration in hrs: "+duration);
+        System.out.println("Fee in rupees: "+fee);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Course c1=new Course();
+        c1.setDetails(112,"Java core",60,3500);
+        c1.getDetails();
+    }
+}
 
 8) Define a class Distance with fields km, m, cm. Provide method to set distance and display
 distance. Also define a member function to add two distances.
 
 Code:
 
+
+
 9) Define a class Circle with radius as member variable Provide methods to set radius value,
  calculate area and calculated circumference.
  
 Code:
 
+class Circle   {
+    float r;
+    void setArea(float radius)    {
+        r=radius;
+    }
+    void getRadius()   {
+        System.out.println("Area is "+(3.14*r*r));
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Distance d1=new circle();
+        d1.setArea((float)5.4); //or 5.4f
+        d1.getRadius();
+    }
+}
+
 10) Define a class Book with member variables bookId, title, price and author. Provide setters
 and getters.
 
 Code:
+
+class Book   {
+    int bookId;
+    String title;
+    float price;
+    String author;
+    void setDetails(int id,String name,float rate,String authName)    {
+        bookId=id;
+        title=name;
+        price=rate;
+        author=authName;
+    }
+    void getDetails()   {
+        System.out.println("Book Id:"+bookId);
+        System.out.println("Title:"+title);
+        System.out.println("Price:"+price);
+        System.out.println("Author:"+author);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Book b1=new Book();
+        b1.setDetails(911,"GUI with Java",(float)599,"George Bush"); //or 5.4f
+        b1.getDetails();
+    }
+}
