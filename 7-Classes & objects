@@ -1,0 +1,47 @@
+1) Define a class Complex to represent a complex number. Declare instance member variables to store real and
+imaginary part of complex number, also define instance member function to set values of complex number and
+print values of a complex number.
+
+Code:
+
+class Complex   {
+    int real,img;
+    void setData(int a,int b) {
+        real=a;
+        img=b;
+    }
+    void showData() {
+        System.out.println(real+" + i"+img);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Complex c1=new Complex();
+        c1.setData(3,4);
+        c1.showData();
+    }
+}
+
+2) Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriatenumber of instance member
+variables and also define instance member functions to set values for time and display values of time.
+
+Code:
+
+class Time   {
+    int h,m,s;
+    void setTime(int x,int y,int z)  {
+        h=x;m=y;s=z;
+    }
+    void showTime() {
+        System.out.println(h+":"+m+":"+s);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+    Time t1=new Time();
+    t1.setTime(11,15,45);
+    t1.showTime();
+    }
+}
+
+3) 
