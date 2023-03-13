@@ -44,4 +44,115 @@ public class Example {
     }
 }
 
-3) 
+3) Define a class Cuboid with member variables to store length of its sides. 
+and also define setters, getters and member functions to calculate
+volume and surface area of cuboid.
+
+Code:
+
+class Cuboid   {
+    double length,breadth,height;
+    void setDimensions(double x,double y,double z)   {
+        length=x;
+        breadth=y;
+        height=z;
+    }
+    double calVol(double x,double y,double z) {
+        return x*y*z;
+    }
+    void showVolume()   {
+        System.out.println("Volume is "+calVol(length,breadth,height));
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Cuboid c1=new Cuboid();
+        c1.setDimensions(5,6,4);
+        c1.showVolume();
+    }
+}
+
+4) Define a class Employee with properties empId, name, salary and define setters 
+and getters.
+
+Code:
+
+class Employee   {
+    int empId;
+    String name;
+    double salary;
+    void setDetails(int id,String name_,Double sal)  {
+        empId=id;
+        name=name_;
+        salary=sal;
+    }
+    void getDetails()  {
+        System.out.println("Employee ID    :"+empId);
+        System.out.println("Employee Name  :"+name);
+        System.out.println("Employee Salary:"+salary);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Employee e1=new Employee();
+        e1.setDetails(12,"Faizan",550000.0);
+        e1.getDetails();
+    }
+}
+
+5) Define a class Contact with fields id, firstName lastName, mobileNo and emailId.
+Provide setters and getters.
+
+Code:
+
+class Contact   {
+    int id;
+    long mobileNo;
+    String firstName,lastName,emailId;
+    void setDetails(int idd,String fn,String ln,long mbno,String emid)    {
+        id=idd;
+        firstName=fn;
+        lastName=ln;
+        mobileNo=mbno;
+        emailId=emid;
+    }
+    void getDetails()   {
+        System.out.println("Id:"+id);
+        System.out.println("First Name:"+firstName);
+        System.out.println("Last Name:"+lastName);
+        System.out.println("Mobile Number:"+mobileNo);
+        System.out.println("Email ID:"+emailId);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Contact C1=new Contact();
+        C1.setDetails(133,"Faizan","Mohammed",9566672134L,"faizanmohammed416@gmail.com");
+        C1.getDetails();
+    }
+}
+
+6) Define a class Question with fields queNo, que, opttionA, optionB,optionC, optionD,answer.
+Provide methods to set question and display question.
+
+Code:
+
+7) Define a class Course with the fields courseId, courseName, duration fee. Provide setters
+and getters.
+
+Code:
+
+8) Define a class Distance with fields km, m, cm. Provide method to set distance and display
+distance. Also define a member function to add two distances.
+
+Code:
+
+9) Define a class Circle with radius as member variable Provide methods to set radius value,
+ calculate area and calculated circumference.
+ 
+Code:
+
+10) Define a class Book with member variables bookId, title, price and author. Provide setters
+and getters.
+
+Code:
