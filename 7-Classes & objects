@@ -173,6 +173,27 @@ distance. Also define a member function to add two distances.
 
 Code:
 
+class Question   {
+    int queNo;
+    String que;
+    char optionA, optionB, optionC, optionD;
+
+    char answer;
+    void setQuestion(String question)    {
+        que=question;
+    }
+    void showQuestion()   {
+        System.out.println(queNo+")"+que);
+    }
+}
+public class Example {
+    public static void main(String[] args) {
+        Question b1=new Question();
+        String question="What is a variable?";
+        b1.setQuestion(question); //or 5.4f
+        b1.showQuestion();
+    }
+}
 
 
 9) Define a class Circle with radius as member variable Provide methods to set radius value,
