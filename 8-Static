@@ -45,3 +45,78 @@ public class Example{
 
     }
 }
+
+2)
+
+
+
+3)
+
+class Video{
+    int videoId;
+    String title;
+    int views;
+    int likes;
+    static int totalVideos=0;
+
+    public void setVideoId(int videoId) {
+        this.videoId = videoId;
+        setTotalVideos();
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
+    public static void setTotalVideos() {
+        Video.totalVideos++;
+    }
+
+    public int getVideoId() {
+        return videoId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public static int getTotalVideos() {
+        return totalVideos;
+    }
+}
+public class Example{
+    public static void main(String[] args) {
+        Video v1=new Video();
+        Video v2=new Video();
+        Video v3=new Video();
+
+        v2.setVideoId(13416);
+        v3.setVideoId(45325);
+
+        v1.setVideoId(10055);
+        v1.setTitle("What are static variables in Java?");
+        v1.setLikes(23);
+        v1.setViews(4500);
+        System.out.println("Video ID:"+v1.getVideoId());
+        System.out.println("Video Title:"+v1.getTitle());
+        System.out.println("Video views:"+v1.getViews());
+        System.out.println("Video likes:"+v1.getLikes());
+        System.out.println("Total videos:"+Video.getTotalVideos());
+    }
+}
