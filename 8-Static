@@ -1,1 +1,47 @@
+1) 
 
+class Account{
+    int accountNumber;
+    String customerName;
+    double balance;
+    static double rateOfInterest;
+    void setAccountNumber(int acNo){
+        accountNumber=acNo;
+    }
+    void setCustomerName(String name){
+        customerName=name;
+    }
+    void setBalance(double bal){
+        balance=bal;
+    }
+    static void setRateOfInterest(double roi){
+        rateOfInterest=roi;
+    }
+    double calSI(int duration){   //duration=time(in years)
+        return (balance*duration*rateOfInterest)/100;
+    }
+    int getAccountNumber() {
+        return accountNumber;
+    }
+    double getBalance() {
+        return balance;
+    }
+    String getCustomerName() {
+        return customerName;
+    }
+}
+public class Example{
+    public static void main(String[] args) {
+        Account.setRateOfInterest(8.0);
+        System.out.println(Account.rateOfInterest);
+        Account faizan=new Account();
+        faizan.setAccountNumber(12343613);
+        faizan.setCustomerName("Mohd Hasan Farrukh Faizan");
+        faizan.setBalance(13000.0);
+        System.out.println(faizan.getAccountNumber());
+        System.out.println(faizan.getCustomerName());
+        System.out.println(faizan.getBalance());
+        System.out.println("SI: "+faizan.calSI(2));
+
+    }
+}
