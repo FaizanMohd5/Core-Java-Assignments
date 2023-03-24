@@ -213,3 +213,34 @@ public class Example{
 
     }
 }
+
+5)
+
+class Box{
+    double length;
+    double breadth;
+    double height;
+    static int boxCount=0;
+    void setDimensions(double l,double b,double h){
+        length=l; breadth=b; height=h;
+        boxCount++;
+    }
+    static void display(){
+        System.out.println("Box count:"+boxCount);
+    }
+}
+public class Example{
+    public static void main(String[] args) {
+        //Initial box count
+        Box.display();
+        Box b1=new Box();
+        Box b2=new Box();
+        Box b3=new Box();
+        b1.setDimensions(6,3,8);
+        b2.setDimensions(6.45,3,8.7);
+        b3.setDimensions(10,20,20);
+        //3 boxes are created
+        Box.display();
+        
+    }
+}
