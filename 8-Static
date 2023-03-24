@@ -120,3 +120,96 @@ public class Example{
         System.out.println("Total videos:"+Video.getTotalVideos());
     }
 }
+
+4) 
+
+class Batch{
+    int batchCode;
+    String courseName;
+    String startDate;
+    int studentCount;
+    String time;
+    int days;
+    static int totalBatches;
+    void setBatchCode(int batchCode1){
+        totalBatches++;
+        batchCode=batchCode1;
+    }
+    void setCourseName(String courseName1){
+        courseName=courseName1;
+    }
+    void setStartDate(String startDate1){
+        startDate=startDate1;
+    }
+    void setStudentCount(int studentCount1){
+        studentCount=studentCount1;
+    }
+    void setTime(String time1){
+        time=time1;
+    }
+    void setDays(int days1){
+        days=days1;
+    }
+    int getBatchCode(){
+        return batchCode;
+    }
+    String getCourseName(){
+        return courseName;
+    }
+    String getStartDate(){
+        return startDate;
+    }
+    int getStudentCount(){
+        return studentCount;
+    }
+    String getTime(){
+        return time;
+    }
+    int getDays() {
+        return days;
+    }
+    static int getTotalBatches(){
+        return totalBatches;
+    }
+}
+public class Example{
+    public static void main(String[] args) {
+        //accessing static member via class name. No object is created
+        System.out.println("Total batches: "+Batch.getTotalBatches());
+        //Creating objects
+        Batch b1=new Batch();
+        Batch b2=new Batch();
+        Batch b3=new Batch();
+        Batch b4=new Batch();
+        Batch b5=new Batch();
+        //Checking batches again
+        System.out.println("Total batches: "+Batch.getTotalBatches());
+        //batch1
+        b1.setBatchCode(222);
+        b1.setCourseName("Java for app development");
+        b1.setStartDate("23-04-2023");
+        b1.setStudentCount(100);
+        b1.setTime("21:00:00");
+        b1.setDays(100);
+        //batch2
+        b2.setBatchCode(122);
+        b2.setCourseName("Java for app development");
+        b2.setStartDate("23-04-2023");
+        b2.setStudentCount(100);
+        b2.setTime("21:00:00");
+        b2.setDays(100);
+
+        //Display of just 1 batch
+        System.out.println("Total batches:"+Batch.getTotalBatches());
+        System.out.println("Batch 1\n"+"Batch code:"+b1.getBatchCode());
+        System.out.println("Batch code:"+b1.getBatchCode());
+        System.out.println("Course name:"+b1.getCourseName());
+        System.out.println("Start date:"+b1.getStartDate());
+        System.out.println("Student count:"+b1.getStudentCount());
+        System.out.println("Time:"+b1.getTime());
+        System.out.println("Days:"+b1.getDays());
+
+        System.out.println("Total batches:"+Batch.getTotalBatches());
+
+    }
+}
