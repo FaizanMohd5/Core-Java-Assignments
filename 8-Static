@@ -1,4 +1,15 @@
-1) 
+1) Define a class Account to represent a bank account. Create accountNumber, customerName,
+balance as instance members and rateOfInterest as static variable. Provide member functions
+for following operations
+
+a. Set account number
+b. Set customer name
+c. Set balance
+d. Set rate of interest
+e. Calculate simple interest (take time as argument)
+f. Get account number
+g. Get balance
+h. Get customer name
 
 class Account{
     int accountNumber;
@@ -46,11 +57,16 @@ public class Example{
     }
 }
 
-2)
+2) Define a class SuperCar to represent a super car of the most powerful and richest person
+of the world. This car is specially designed and guaranteed to the only available super
+car of it's kind in the world. Make sure only one instance can be created of the SuperCar.
+ Create instance variables like ownerName, price, brand. Provide appropriate setters and getters.
 
 
 
-3)
+3) Define a class video to represnet a video entity for a popular app like YouTube. Create
+member variables like videoId, title, views likes and totalVideos. Provide methods to set 
+and get the properties of video.
 
 class Video{
     int videoId;
@@ -121,7 +137,9 @@ public class Example{
     }
 }
 
-4) 
+4) Define a class Batch for an educational institute with properties batch code,
+course name, start date, student count, time, days and total number of batches. Provide
+appropriate methods to access properties.
 
 class Batch{
     int batchCode;
@@ -214,7 +232,8 @@ public class Example{
     }
 }
 
-5)
+5) Define a class Box with length, breadth, height and box count as properties. Provide 
+methods to set dimensions and show dimensions. Also define a method to display box count.
 
 class Box{
     double length;
@@ -225,7 +244,10 @@ class Box{
         length=l; breadth=b; height=h;
         boxCount++;
     }
-    static void display(){
+    void showDimension(){
+        System.out.println("Dimensions\n"+"Length: "+length+"Breadth: "+breadth+"Height: "+height);    
+    }
+    static void boxCount(){
         System.out.println("Box count:"+boxCount);
     }
 }
@@ -238,9 +260,10 @@ public class Example{
         Box b3=new Box();
         b1.setDimensions(6,3,8);
         b2.setDimensions(6.45,3,8.7);
+        b1.showDimentions();
         b3.setDimensions(10,20,20);
         //3 boxes are created
-        Box.display();
+        Box.boxCount();
         
     }
 }
