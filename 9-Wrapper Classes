@@ -1,0 +1,56 @@
+1) Define a class Circle with member variable radius. Provide methods
+like, setRadius, getRadius, getCircumference. Use wrapper classes instead of primitives.
+
+Code:
+class Circle{
+    Float radius;
+    void setRadius(Float r){
+        radius=r;
+    }
+    Float getRadius(){
+        return radius;
+    }
+    Float getArea(){
+        return 3.14F*radius*radius;
+    }
+    Float getCircumference(){
+        return 2*3.14F*radius;
+    }
+}
+
+
+2) Define a class MarkSheet with properties to hold marks of five subjects(like, 
+physics, maths, chemistry, english, hindi). Provide setters and getters. 
+Use wrapper classes instead of primitives.
+
+Code:
+
+class MarkSheet{
+    Float phy,math,chem,eng,hin;
+    void setPhy(Float m)    {   phy=m;  }
+    void setMath(Float m)    {   math=m;  }
+    void setChem(Float m)    {   chem=m;  }
+    void setEng(Float m)    {   eng=m;  }
+    void setHin(Float m)    {   hin=m;  }
+
+    Float getPhy() {     return phy;     }
+    Float getMath() {    return math;    }
+    Float getChem() {    return chem;    }
+    Float getEng() {     return eng;     }
+    Float getHin() {     return hin;     }
+}
+public class WrapperClasses {
+    public static void main(String []args)  {
+        MarkSheet m1=new MarkSheet();
+        m1.setPhy(56.7F);
+        m1.setMath(45.0F);
+        m1.setChem(70.5F);
+        m1.setEng(87.0F);
+        m1.setHin(69.9F);
+        System.out.println("Physics  : "+m1.getPhy());
+        System.out.println("Maths    : "+m1.getMath());
+        System.out.println("Chemistry: "+m1.getChem());
+        System.out.println("English  : "+m1.getEng());
+        System.out.println("Hindi    : "+m1.getHin());
+    }
+}
