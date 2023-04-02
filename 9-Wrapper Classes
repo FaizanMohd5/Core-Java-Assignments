@@ -54,3 +54,109 @@ public class WrapperClasses {
         System.out.println("Hindi    : "+m1.getHin());
     }
 }
+
+3) In Question 2, provide a method to find maximum marks.
+
+Code:
+
+class MarkSheet{
+    Float phy,math,chem,eng,hin;
+    void setPhy(Float m)    {   phy=m;  }
+    void setMath(Float m)    {   math=m;  }
+    void setChem(Float m)    {   chem=m;  }
+    void setEng(Float m)    {   eng=m;  }
+    void setHin(Float m)    {   hin=m;  }
+    Float getMaxMarks(){
+        Float max;
+        max = (phy>math?(phy>chem?phy:chem):(math>chem?math:chem));
+        return (max>eng?(max>hin?max:hin):(eng>hin?eng:hin));
+    }
+    Float getPhy() {     return phy;     }
+    Float getMath() {    return math;    }
+    Float getChem() {    return chem;    }
+    Float getEng() {     return eng;     }
+    Float getHin() {     return hin;     }
+}
+public class WrapperClasses {
+    public static void main(String []args)  {
+        MarkSheet m1=new MarkSheet();
+        m1.setPhy(59.4F);
+        m1.setChem(45.9F);
+        m1.setHin(70.4F);
+        m1.setMath(70.5F);
+        m1.setEng(67.9F);
+        System.out.println("Max marks: "+m1.getMaxMarks());
+    }
+}
+
+4) In Question 2, provide a method to find average of marks in all subjects.
+
+Code:
+class MarkSheet{
+    Float phy,math,chem,eng,hin;
+    void setPhy(Float m)    {   phy=m;  }
+    void setMath(Float m)    {   math=m;  }
+    void setChem(Float m)    {   chem=m;  }
+    void setEng(Float m)    {   eng=m;  }
+    void setHin(Float m)    {   hin=m;  }
+    Float getAverage(){
+        return (phy+math+chem+eng+hin)/5.0F;
+    }
+    Float getPhy() {     return phy;     }
+    Float getMath() {    return math;    }
+    Float getChem() {    return chem;    }
+    Float getEng() {     return eng;     }
+    Float getHin() {     return hin;     }
+}
+public class WrapperClasses {
+    public static void main(String []args)  {
+        MarkSheet m1=new MarkSheet();
+        m1.setPhy(59.4F);
+        m1.setChem(45.9F);
+        m1.setHin(70.4F);
+        m1.setMath(70.5F);
+        m1.setEng(67.9F);
+        System.out.println("Max marks: "+m1.getAverage());
+    }
+}
+
+5) In Question 2, provide a method to find result as pass or fail.
+Passing marks is taken as argument.
+
+Code:
+class MarkSheet{
+    Float phy,math,chem,eng,hin;
+    void setPhy(Float m)    {   phy=m;  }
+    void setMath(Float m)    {   math=m;  }
+    void setChem(Float m)    {   chem=m;  }
+    void setEng(Float m)    {   eng=m;  }
+    void setHin(Float m)    {   hin=m;  }
+    Float getMaxMarks(){
+        Float max;
+        max = (phy>math?(phy>chem?phy:chem):(math>chem?math:chem));
+        return (max>eng?(max>hin?max:hin):(eng>hin?eng:hin));
+    }
+    Float getAverage(){
+        return (phy+math+chem+eng+hin)/5.0F;
+    }
+    Float getPhy() {     return phy;     }
+    Float getMath() {    return math;    }
+    Float getChem() {    return chem;    }
+    Float getEng() {     return eng;     }
+    Float getHin() {     return hin;     }
+    String getResult(Float passMarks){
+        return (passMarks<=(phy+chem+math+hin+eng)/5?"Pass":"Fail");
+    }
+}
+public class WrapperClasses {
+    public static void main(String []args)  {
+        MarkSheet m1=new MarkSheet();
+        m1.setPhy(59.4F);
+        m1.setChem(45.9F);
+        m1.setHin(70.4F);
+        m1.setMath(70.5F);
+        m1.setEng(67.9F);
+        System.out.println(m1.getResult(35.0F)); //Arguments passed denotes passing marks
+    }
+}
+
