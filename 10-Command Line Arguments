@@ -1,0 +1,41 @@
+1) WAP to add two numbers. numbers are provided through command line.
+Code:
+
+public class Commands {
+    public static void main(String []args)
+    {
+        System.out.println("Command line arguments");
+        int sum = Integer.parseInt(args[0])+Integer.parseInt(args[1]);
+        System.out.println(args[0]+"+"+args[1]+"="+sum);
+    }
+}
+
+2) WAP to add N numbers. Numbers are provided through command line.
+Code:
+
+public class Commands {
+    public static void main(String []args)
+    {
+        int sum=0;
+        System.out.print("Entered value of N through CL is "+args[0]+"\nNumbers are ");
+        for(int i=1;i<=Integer.parseInt(args[0]);i++){
+            System.out.print(args[i]+" ");
+            sum=sum+Integer.parseInt(args[i]);
+        }
+        System.out.println("\nSum: "+sum);
+    }
+}
+
+3) WAP to print all strings supplied through command line.
+Code:
+public class Commands {
+    public static void main(String []args)
+    {
+        for(int i=0;i<args.length;i++){
+            System.out.println(args[i]);
+        }
+    }
+}
+
+4) WAP to calculate LCM of two numbers. Numbers are provided through command line.
+Code:
