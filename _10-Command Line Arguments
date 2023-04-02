@@ -70,3 +70,84 @@ public class Commands {
 
 6) WAP to filter and print numbers which are prime. Numbers are provided through command line.
 Code:
+public class Commands {
+    public static void main(String []args) {
+        int flag;
+        for(int i=0;i<args.length;i++){
+            flag=0;
+            for(int j=2;j<=Integer.parseInt(args[i])/2;j++){
+                if(Integer.parseInt(args[i])%j==0){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)
+                System.out.println(args[i]);
+        }
+    }
+}
+
+7) WAP to calculate factorial of a number. number is provided through CL.
+Code:
+public class Commands {
+    public static void main(String []args) {
+        int fact=1;
+        for(int i=1;i<=Integer.parseInt(args[0]);i++)
+            fact=fact*i;
+        System.out.println(args[0]+"!="+fact);
+    }
+}
+
+8) WAP to calculate sum of digits of a given numbers. Numbers are provided through command line. Print
+all the numbers and sum os its digits.
+Code:
+public class Commands {
+    public static void main(String []args) {
+        int sum=0,rem;
+        System.out.println("Number : Sum of digits");
+        for(int i=0;i<args.length;i++){
+            System.out.print(args[i]+"      :    ");
+            int j=Integer.parseInt(args[i]);
+            while(j>0){
+                rem=j%10;
+                sum=sum+rem;
+                j=j/10;
+            }
+            System.out.println(sum);
+            sum=0;
+        }
+    }
+}
+
+9) WAP to find the greatest number among all numbers provided through
+command line.
+Code:
+public class Commands {
+    public static void main(String []args) {
+        int max=Integer.parseInt(args[0]),n;
+        System.out.print("Numbers provided by CL are "+max);
+        for(int i=1;i< args.length;i++){
+            n=Integer.parseInt(args[i]);
+            System.out.print(" "+n);
+            if(max<n)
+                max=n;
+        }
+        System.out.println("\nMaximum : "+max);
+    }
+}
+
+10) WAP to calculate HCF of two numbers. Numbers are provided through command line.
+Code:
+public class Commands {
+    public static void main(String []args) {
+        int lcm;
+        System.out.println("Numbers provided are "+args[0]+" & "+args[1]);
+        int n1=Integer.parseInt(args[0]),n2=Integer.parseInt(args[1]);
+        for(lcm=1;lcm<n1*n2;lcm++){
+            if(lcm%n1==0 && lcm%n2==0)
+                break;
+        }
+        int hcf=(n1*n2)/lcm;
+        System.out.println("Hcf of "+args[0]+" & "+args[1]+" is "+hcf);
+    }
+}
