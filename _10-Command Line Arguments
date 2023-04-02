@@ -39,3 +39,34 @@ public class Commands {
 
 4) WAP to calculate LCM of two numbers. Numbers are provided through command line.
 Code:
+public class Commands {
+    public static void main(String []args) {
+        int n1,n2,lcm;
+        n1=Integer.parseInt(args[0]);
+        n2=Integer.parseInt(args[1]);
+        System.out.println("Two numbers from CL are: "+args[0]+" "+args[1]);
+        for(lcm=1;lcm<n1*n2;lcm++){
+            if(lcm%n1==0 && lcm%n2==0)
+                break;
+        }
+        System.out.println("LCM of "+args[0]+" and "+args[1]+" is "+lcm);
+    }
+}
+
+5) WAP to check whether a given number is Prime or not. Number is given through command line.
+Code:
+public class Commands {
+    public static void main(String []args) {
+        int n=Integer.parseInt(args[0]),factors=2;
+        for(int i=2;i<=n/2;i++){
+            if(n%i==0){
+                factors++;
+                break;
+            }
+        }
+        System.out.println(n+" is "+((factors>2)?"Not prime":"Prime"));
+    }
+}
+
+6) WAP to filter and print numbers which are prime. Numbers are provided through command line.
+Code:
