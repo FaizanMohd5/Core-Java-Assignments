@@ -1,0 +1,76 @@
+1) WAP to print current date.
+Code:
+
+import java.time.LocalDate;
+public class Dummy {
+    public static void main(String []args){
+        LocalDate d = LocalDate.now();
+        System.out.println("Current date: "+d);
+    }
+}
+
+2) WAP to print current time.
+Code:
+
+import java.time.LocalTime;
+public class Dummy {
+    public static void main(String []args){
+        LocalTime t = LocalTime.now();
+        System.out.println("Current date: "+t);
+    }
+}
+
+3) WAP to print randoom number between 100 and 200.
+Code:
+
+import java.util.Date;
+public class Dummy {
+    public static void main(String []args){
+        Date date = new Date();
+        long timeMs;
+        long random_num=0;
+        while(!(random_num>=100)) {
+            timeMs= date.getTime();
+            random_num = timeMs % 200;
+        }
+        System.out.println("Random number : "+random_num);
+    }
+}
+
+4) WAP a calculate roots of quadratic equation.
+Code:
+
+import java.lang.Math;
+public class Dummy {
+    public static void main(String []args){
+        int a,b,c;
+        a=Integer.parseInt(args[0]);
+        b=Integer.parseInt(args[1]);
+        c=Integer.parseInt(args[2]);
+        double r1,r2,D=b*b-4*a*c;
+        if(D>0){
+            System.out.println("Real and distinct");
+            r1 = (-b+Math.sqrt(D))/(2*a);
+            r2 = (-b-Math.sqrt(D))/(2*a);
+        }
+        else if(D==0){
+            System.out.println("Real and equal");
+            r1 = -b/(2*a);
+            r2 = r1;
+        }
+        else{
+            System.out.println("Imaginary roots");
+            r1 = (-b+Math.sqrt(-D))/(2*a);
+            r2 = (-b-Math.sqrt(-D))/(2*a);
+        }
+        System.out.println("Roots : "+r1+", "+r2);
+    }
+}
+
+5) Create two Java files A1.java and B1.java, A1 as main class. A! and B1
+resides in different packages p1 and p2 respectively. Define a method
+in fb1() in B1 class which prints hello. Instantiate B! class in main 
+method of A1 class and invoke fb1() method.
+
+Code:
+
