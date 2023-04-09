@@ -1,0 +1,140 @@
+1) WAP to print first N natural numbers.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++)
+            System.out.print(i+" ");
+    }
+}
+
+2) WAP to print first N natural numbers in reverse order.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=n;i>=1;i--)
+            System.out.print(i+" ");
+    }
+}
+
+3) WAP to print first N odd natural numbers.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++)
+            System.out.print(2*i-1+" ");
+    }
+}
+
+4) WAP to print first N odd natural numbers in reverse order.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=n;i>=1;i--)
+            System.out.print(2*i-1+" ");
+    }
+}
+
+5) WAP to print first N even natural numbers.
+Code:
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++)
+            System.out.print(2*i+" ");
+    }
+}
+
+6) WAP to print first N even natural numbers in reverse order.
+Code:
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=n;i>=1;i--)
+            System.out.print(2*i+" ");
+    }
+}
+
+7) WAP to print squares of first N natural numbers.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++)
+            System.out.print(i*i+" ");
+    }
+}
+
+8) WAP to print cubes of first N natural numbers.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter range : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++)
+            System.out.print(i*i*i+" ");
+    }
+}
+
+9) WAP to print table of N.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]){
+        System.out.print("Enter number : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=10;i++)
+            System.out.println(n+" X "+i+" = "+(n*i));
+    }
+}
+
+10) WAP to print N number of tables.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]) {
+        System.out.print("Enter number of tables : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 10; j++)
+                System.out.println(i + " X " + j + " = " + (i * j));
+            System.out.println("-----------------------");
+        }
+    }
+}
