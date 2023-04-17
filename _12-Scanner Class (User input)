@@ -138,3 +138,168 @@ public class UserInput {
         }
     }
 }
+
+10) WAP to check whether a number is even or odd.
+Code:
+
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]) {
+        int n;
+        System.out.println("Enter the number : ");
+        Scanner sr = new Scanner(System.in);
+        n = sr.nextInt();
+        System.out.println(n + ((n % 2 == 0) ? " is even." : " is odd."));
+    }
+}
+
+11) WAP to find greatest number among three numbers.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int a,b,c;
+        System.out.println("Enter three number : ");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        a = sr.nextInt();
+        b = sr.nextInt();
+        c = sr.nextInt();
+        System.out.println((a>b?a>c?a:c:b>c?b:c)+" is larger");
+    }
+}
+
+12) WAP to count the numbre of digits of a given number.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,count=0;
+        System.out.println("Enter a number:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        if(n==0) {
+            System.out.println("Digits : 1");
+            return;
+        }
+        while(n>0)
+        {
+            count++;
+            n=n/10;
+        }
+        System.out.println("Digits : "+count);
+    }
+}
+
+13) WAP to reverse a number.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,rev = 0,rem;
+        System.out.println("Enter a number:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        while(n > 0){
+            rem = n%10;
+            rev = rev*10+rem;
+            n = n / 10;
+        }
+        System.out.println("Reverse is "+rev);
+    }
+}
+
+14) WAP to calculate sum of first N natural numbers.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,sum=0;
+        System.out.println("Enter range:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        for(int i=1 ; i<=n ; i++){
+            sum=sum+i;
+        }
+        System.out.println("Sum is "+sum);
+    }
+}
+
+15) WAP to calculate sum of first N odd natural numbers.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,sum=0;
+        System.out.println("Enter range:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        for(int i=1 ; i<=n ; i++){
+            sum=sum+(i%2!=0?i:0);
+        }
+        System.out.println("Sum is "+sum);
+    }
+}
+
+16) WAP to calculate sum of first N even natural numbers.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,sum=0;
+        System.out.println("Enter range:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        for(int i=1 ; i<=n ; i++){
+            sum=sum+(i%2==0?i:0);
+        }
+        System.out.println("Sum is "+sum);
+    }
+}
+
+17) WAP to calculate sum of squares of first N natural numbers.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,sum=0;
+        System.out.println("Enter range:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        for(int i=1 ; i<=n ; i++){
+            sum=sum+i*i;
+        }
+        System.out.println("Sum is "+sum);
+    }
+}
+
+18) WAP to calculate sum of digits of a given number.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,sum=0;
+        System.out.println("Enter number:");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        while(n>0){
+            sum = sum + n%10;
+            n = n/10;
+        }
+        System.out.println("Sum of digits : "+sum);
+    }
+}
+
+19) WAP to calculate factorial of a number.
+Code:
+
+public class UserInput {
+    public static void main(String []args) {
+        int n,fact=1;
+        System.out.println("Enter number : ");
+        java.util.Scanner sr = new java.util.Scanner(System.in);
+        n = sr.nextInt();
+        for(int i=1 ; i<=n ; i++)
+                fact=fact*i;
+        System.out.println(n+"!="+fact);
+    }
+}
