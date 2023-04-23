@@ -209,28 +209,40 @@ distance. Also define a member function to add two distances.
 
 Code:
 
-class Question   {
-    int queNo;
-    String que;
-    char optionA, optionB, optionC, optionD;
-
-    char answer;
-    void setQuestion(String question)    {
-        que=question;
+class Distance{
+    int km, m, cm;
+    void setDistance(int x,int y,int z) {
+        km=x;
+        m=y;
+        cm=z;
     }
-    void showQuestion()   {
-        System.out.println(queNo+")"+que);
+    void display(){
+        System.out.println(km+"km "+m+"m "+cm+"cm ");
+    }
+    Distance addDistance(Distance D){
+        Distance temp = new Distance();
+        temp.cm = cm + D.cm;
+        temp.m = temp.cm/100 + m + D.m;
+        temp.cm = temp.cm%100;
+        temp.km = temp.m/1000 + km + D.km;
+        temp.m = temp.m%1000;
+        return temp;
     }
 }
-public class Example {
+public class Example{
     public static void main(String[] args) {
-        Question b1=new Question();
-        String question="What is a variable?";
-        b1.setQuestion(question); //or 5.4f
-        b1.showQuestion();
+        Distance d1 = new Distance();
+        d1.setDistance(12,144,5004);
+        d1.display();
+
+        Distance d2 = new Distance();
+        d2.setDistance(11,121,4000);
+        d2.display();
+
+        //Adding
+        System.out.println("Addtion: "+d1.addDistance(d2));
     }
 }
-
 
 9) Define a class Circle with radius as member variable Provide methods to set radius value,
  calculate area and calculated circumference.
