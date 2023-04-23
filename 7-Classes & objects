@@ -137,6 +137,42 @@ Provide methods to set question and display question.
 
 Code:
 
+class Question {
+    int queNo;
+    String que;
+    String optionA, optionB, optionC, optionD;
+    char answer;
+
+    void setQue(int qno, String q, String a, String b, String c, String d, char ans) {
+        queNo = qno;
+        que = q;
+        optionA = a;
+        optionB = b;
+        optionC = c;
+        optionD = d;
+        answer = ans;
+    }
+    void display(){
+        System.out.println("Q"+queNo+". "+que);
+        System.out.println("A)"+optionA+"\nB)"+optionB+"\nC)"+optionC+"\nD)"+optionD);
+        System.out.println("Answer : "+answer);
+    }
+}
+public class Example{
+    public static void main(String[] args) {
+        Question q1 = new Question();
+        int qno = 1;
+        String question = "What is Java?";
+        String optA = "Technology";
+        String optB = "Programming Language";
+        String optC = "Coffee";
+        String optD = "Both A & C";
+        char ans = 'D';
+        q1.setQue(qno,question,optA,optB,optC,optD,ans);
+        q1.display();
+    }
+}
+
 7) Define a class Course with the fields courseId, courseName, duration, fee. Provide setters
 and getters.
 
