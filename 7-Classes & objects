@@ -232,15 +232,18 @@ class Distance{
 public class Example{
     public static void main(String[] args) {
         Distance d1 = new Distance();
-        d1.setDistance(12,144,5004);
-        d1.display();
+        d1.setDistance(12,140,30);
 
         Distance d2 = new Distance();
-        d2.setDistance(11,121,4000);
+        d2.setDistance(4,10,105);
+
+        d1.display();
         d2.display();
 
-        //Adding
-        System.out.println("Addtion: "+d1.addDistance(d2));
+        //adding two distances
+        Distance d3 = new Distance();
+        d3 = d1.addDistance(d2);
+        d3.display();
     }
 }
 
