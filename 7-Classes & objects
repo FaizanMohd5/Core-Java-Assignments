@@ -249,20 +249,25 @@ public class Example{
  
 Code:
 
-class Circle   {
-    float r;
-    void setArea(float radius)    {
-        r=radius;
+class Circle{
+    float radius;
+
+    void setRadius(float r) {
+        radius = r;
     }
-    void getRadius()   {
-        System.out.println("Area is "+(3.14*r*r));
+    float getArea(){
+        return 3.14f * radius * radius;
+    }
+    float getCircumference(){
+        return 2*3.14f*radius;
     }
 }
-public class Example {
+public class Example{
     public static void main(String[] args) {
-        Distance d1=new circle();
-        d1.setArea((float)5.4); //or 5.4f
-        d1.getRadius();
+        Circle c1 = new Circle();
+        c1.setRadius(4);
+        System.out.println("Area:"+c1.getArea());
+        System.out.println("Circumference:"+c1.getCircumference());
     }
 }
 
