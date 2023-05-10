@@ -52,23 +52,36 @@ Code:
 
 class Cuboid   {
     double length,breadth,height;
-    void setDimensions(double x,double y,double z)   {
+    void setLength(double x)   {
         length=x;
+    }
+    void setBreadth(double y)   {
         breadth=y;
+    }
+    void setHeight(double z)    {
         height=z;
     }
-    double calVol(double x,double y,double z) {
+    double calVolume(double x,double y,double z) {
         return x*y*z;
     }
-    void showVolume()   {
-        System.out.println("Volume is "+calVol(length,breadth,height));
+    double getVolume()   {
+        return calVolume(length,breadth,height);
+    }
+    double calTsa(double x,double y,double z) {
+        return 2*(x*y*z);
+    }
+    double getTsa(){
+        return calTsa(length,breadth,height);
     }
 }
 public class Example {
     public static void main(String[] args) {
         Cuboid c1=new Cuboid();
-        c1.setDimensions(5,6,4);
-        c1.showVolume();
+        c1.setLength(5);
+        c1.setBreadth(6);
+        c1.setHeight(7);
+        System.out.println("Volume is "+c1.getVolume());
+        System.out.println("TSA is "+c1.getTsa());
     }
 }
 
@@ -81,22 +94,34 @@ class Employee   {
     int empId;
     String name;
     double salary;
-    void setDetails(int id,String name_,Double sal)  {
+    void setEmpId(int id)  {
         empId=id;
+    }
+    void setName(String name_)  {
         name=name_;
+    }
+    void setSalary(Double sal)  {
         salary=sal;
     }
-    void getDetails()  {
-        System.out.println("Employee ID    :"+empId);
-        System.out.println("Employee Name  :"+name);
-        System.out.println("Employee Salary:"+salary);
+    int getEmpId()  {
+        return empId;
+    }
+    String getName(){
+        return name;
+    }
+    double getSalary(){
+        return salary;
     }
 }
 public class Example {
     public static void main(String[] args) {
         Employee e1=new Employee();
-        e1.setDetails(12,"Faizan",550000.0);
-        e1.getDetails();
+        e1.setEmpId(101101);
+        e1.setName("Faizan");
+        e1.setSalary(4500000.0);
+        System.out.println("Employee ID    :"+e1.getEmpId());
+        System.out.println("Employee ID    :"+e1.getName());
+        System.out.println("Employee ID    :"+e1.getSalary());
     }
 }
 
