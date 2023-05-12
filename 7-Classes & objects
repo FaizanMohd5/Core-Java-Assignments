@@ -207,25 +207,43 @@ class Course   {
     int courseId;
     String courseName;
     int duration;
-    int fee;
-    void setDetails(int id,String cn,int dur,int fee_)    {
+    float fee;
+    void setId(int id)    {
         courseId=id;
-        courseName=cn;
-        duration=dur;
-        fee=fee_;
     }
-    void getDetails()   {
-        System.out.println("Course ID: "+courseId);
-        System.out.println("Course Name: "+courseName);
-        System.out.println("Duration in hrs: "+duration);
-        System.out.println("Fee in rupees: "+fee);
+    void setCourseName(String cn)   {
+        courseName=cn;
+    }
+    void setDuration(int dur)   {
+        duration=dur;
+    }
+    void setFee(float fee_)     {
+    fee=fee_;
+    }
+    int getId()   {
+        return courseId;
+    }
+    String getCourseName()  {
+        return courseName;
+    }
+    int getDuration()   {
+        return duration;
+    }
+    float getFee()  {
+        return fee;
     }
 }
 public class Example {
     public static void main(String[] args) {
         Course c1=new Course();
-        c1.setDetails(112,"Java core",60,3500);
-        c1.getDetails();
+        c1.setId(123);
+        c1.setCourseName("Core Java");
+        c1.setDuration(72);
+        c1.setFee(3500f);
+        System.out.println("Course Id: "+c1.getId());
+        System.out.println("Course Name: "+c1.getCourseName());
+        System.out.println("Course Duration in Hrs: "+c1.getDuration());
+        System.out.println("Course Fee: "+c1.getFee());
     }
 }
 
@@ -309,23 +327,41 @@ class Book   {
     String title;
     float price;
     String author;
-    void setDetails(int id,String name,float rate,String authName)    {
-        bookId=id;
-        title=name;
-        price=rate;
+    void setBookId(int id) {
+        bookId = id;
+    }
+    void setTitle(String name) {
+        title = name;
+    }
+    void setPrice(float rate) {
+        price = rate;
+    }
+    void setAuthor(String authName) {
         author=authName;
     }
-    void getDetails()   {
-        System.out.println("Book Id:"+bookId);
-        System.out.println("Title:"+title);
-        System.out.println("Price:"+price);
-        System.out.println("Author:"+author);
+    int getBookId()   {
+        return bookId;
+    }
+    String getTitle() {
+        return title;
+    }
+    float getPrice() {
+        return price;
+    }
+    String getAuthor() {
+        return author;
     }
 }
 public class Example {
     public static void main(String[] args) {
         Book b1=new Book();
-        b1.setDetails(911,"GUI with Java",(float)599,"George Bush"); //or 5.4f
-        b1.getDetails();
+        b1.setBookId(911);
+        b1.setTitle("The plan");
+        b1.setPrice(2003f);
+        b1.setAuthor("George Bush");
+        System.out.println("Book Id:"+b1.getBookId());
+        System.out.println("Book Title:"+b1.getTitle());
+        System.out.println("Book Price:"+b1.getPrice());
+        System.out.println("Book Author:"+b1.getAuthor());
     }
 }
