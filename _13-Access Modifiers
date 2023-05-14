@@ -1,0 +1,255 @@
+1) Define a Java class Person with private instance variables name and age.
+   Demonstrate how can you access instance variables of Person from Main class's main method.
+   
+Code: 
+
+Person.java
+
+class Person {
+    private String name;
+    private int age;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+
+--------------------------------------------------------------------------
+Main.java
+
+package AccessMod1;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        p1.setName("Faizan");
+        p1.setAge(20);
+        System.out.println(p1.getName());
+        System.out.println(p1.getAge());
+    }
+}
+
+2) Create a Java file with a main class HelloWorld and another class A1.
+   Also define a java file with class B1 and B2 (both are non public classes). If there is a way then 
+   Demonstrate how to access public method of class B1 and B2 from class A1.
+   
+Code:
+
+HelloWorld.java
+
+package AccessMod1;
+public class HelloWorld {
+    public static void main(String[] args) {
+        A1 a1;
+        a1 = new A1();
+        a1.callMethod();
+    }
+}
+class A1 {
+    public void callMethod() {
+        B1 b1 = new B1();
+        B2 b2 = new B2();
+        b1.methodB1();
+        b2.methodB2();
+    }
+}
+--------------------------------------------------------------------------
+B1.java
+
+package AccessMod1;
+
+class B1 {
+    public void methodB1()  {
+        System.out.println("public method of B1");
+    }
+}
+class B2 {
+    public void methodB2()  {
+        System.out.println("public method of B2");
+    }
+}
+
+----------------------------------------------------------------------------
+
+3) Create java file with public class Circle (with private data member radius), which provides 
+ public methods to calculate area and circumference of circle along with setters and getters.
+ Create another Java file containing the main class. Create instance of Circle class in main
+ method and set radius of circle. Display area and circumference of circle.
+ 
+ Code:
+ 
+ Circle.java
+ 
+ package AccessMod1;
+
+public class Circle {
+    private float radius;
+    public float getRadius() {
+        return radius;
+    }
+    public void setRadius(float radius) {
+        this.radius = radius;
+    }
+    public float getArea() {
+        return radius * radius * 3.14f;
+    }
+    public float getCircumference() {
+        return 2*getArea();
+    }
+}
+
+-----------------------------------------------------------------------------
+
+MainCir.java
+
+package AccessMod1;
+
+public class MainCir {
+    public static void main(String[] args) {
+        Circle c1 = new Circle();
+        c1.setRadius(3.4f);
+        System.out.println("Area: "+c1.getArea());
+        System.out.println("Circumference: "+c1.getCircumference());
+    }
+}
+
+------------------------------------------------------------------------------
+
+4) Define a class Employee with default accessibility of instance variables empid, name and salary.
+   Provide setters and getters in the class. Also define Main class in the same package to access 
+   Employee class.
+   
+Code:
+
+Employee.java
+
+package AccessMod1;
+
+class Employee {
+    int empId;
+    String name;
+    float salary;
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+}
+
+------------------------------------------------------------------------------
+
+MainEmp.java
+
+package AccessMod1;
+
+public class MainEmp {
+    public static void main(String[] args) {
+        Employee e1;
+        e1 = new Employee();
+        e1.setEmpId(12);
+        e1.setName("Faizan");
+        e1.setSalary(100000.0f);
+        System.out.println(e1.getEmpId());
+        System.out.println(e1.getName());
+        System.out.println(e1.getSalary());
+    }
+}
+
+------------------------------------------------------------------------------
+
+5) Define a Box class with private member variables length, breadth and height. Also define protected
+   member variables volume and surfaceArea. Provide setter and getters. Also provide methods to calculate
+   volume and surfaceArea. Write Main class in the same package to access Box class and display area 
+   and volume of a box.
+   
+Code:
+
+Box.java
+
+package AccessMod1;
+
+public class Box {
+    private int length;
+    private int breadth;
+    private int height;
+    protected float volume;
+    protected float surfaceArea;
+    public int getLength() {
+        return length;
+    }
+    public void setLength(int length) {
+        this.length = length;
+    }
+    public int getBreadth() {
+        return breadth;
+    }
+    public void setBreadth(int breadth) {
+        this.breadth = breadth;
+    }
+    public int getHeight() {
+        return height;
+    }
+    public void setHeight(int height) {
+        this.height = height;
+    }
+    public float getVolume() {
+        volume = calVolume();
+        return volume;
+    }
+    public float getSurfaceArea() {
+        surfaceArea = calSurfaceArea();
+        return surfaceArea;
+    }
+    public float calVolume() {
+        return length * breadth * height ;
+    }
+    public float calSurfaceArea() {
+        return 2*(length + breadth + height);
+    }
+}
+
+
+--------------------------------------------------------------------
+MainBox.java
+
+package AccessMod1;
+
+public class MainBox {
+    public static void main(String[] args) {
+        Box b1 = new Box();
+        b1.setLength(4);
+        b1.setBreadth(3);
+        b1.setHeight(6);
+        System.out.println("Volume : "+b1.getVolume());
+        System.out.println("Surface Area : "+b1.getSurfaceArea());
+    }
+}
+
+--------------------------------------------------------------------
