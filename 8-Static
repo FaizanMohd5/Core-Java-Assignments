@@ -62,6 +62,69 @@ of the world. This car is specially designed and guaranteed to the only availabl
 car of it's kind in the world. Make sure only one instance can be created of the SuperCar.
  Create instance variables like ownerName, price, brand. Provide appropriate setters and getters.
 
+Code:
+
+class SuperCar{
+    private String ownerName;
+    private double price;
+    private String colour;
+    private String brand;
+    private static SuperCar ref;
+    private SuperCar(){
+
+    }
+    public static SuperCar createInstance()    {
+        if(ref==null) {
+            SuperCar o = new SuperCar();
+            return o;
+        }
+        return null;
+    }
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+}
+public class Example {
+    public static void main(String[] args) {
+        SuperCar ob = SuperCar.createInstance();
+        ob.setOwnerName("Faizan");
+        System.out.println(ob.getOwnerName()+" ");
+        
+        SuperCar o1 = SuperCar.createInstance();
+        o1.setOwnerName("Farukh"); // Exception 
+        System.out.println(o1.getOwnerName());
+    }
+}
 
 
 3) Define a class video to represnet a video entity for a popular app like YouTube. Create
