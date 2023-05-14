@@ -1,0 +1,37 @@
+1) Define a Java class Person with private instance variables name and age.
+   Demonstrate how can you access instance variables of Person from Main class's main method.
+   
+Code: 
+
+class Person {
+    private String name;
+    private int age;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        p1.setName("Faizan");
+        p1.setAge(20);
+        System.out.println(p1.getName());
+        System.out.println(p1.getAge());
+    }
+}
+
+2) Create a Java file with a main class HelloWorld and another class A1.
+   Also define a java file with class B1 and B2 (both are non public classes). If there is a way then 
+   Demonstrate how to access public method of class B1 and B2 from class A1.
+   
+Code:
+
