@@ -79,4 +79,131 @@ public class Employee {
     }
 }
 
-3) 
+3) Define a class Box with private instance variables length, breadth and height.
+Provide three constructors in the class, first with no argument, second with one argument
+and third with three arguments.
+
+Code:
+
+public class Box {
+    private int length, breadth, height;
+    Box(){
+
+    }
+    {
+        length = 10;
+        breadth = 14;
+        height = 12;
+    }
+    Box(int length){
+        this.length = length;
+    }
+    Box(int length, int breadth, int height){
+        this.length = length;
+        this.breadth = breadth;
+        this.height = height;
+    }
+    void showDimensions(){
+        System.out.println("Length: "+length);
+        System.out.println("Breadth: "+breadth);
+        System.out.println("Height: "+height);
+    }
+    public static void main(String[] args) {
+        Box b1 = new Box();
+        Box b2 = new Box(45);
+        Box b3 = new Box(40,100,50);
+        b1.showDimensions();
+        b2.showDimensions();
+        b3.showDimensions();
+    }
+}
+
+4) Define a class Time with private instance variables hr, min and sec. Provide three
+ constructors in the class, first one takes no argument, second takes one argument as seconds
+ and third takes three arguments for hour min and seconds.
+ 
+Code:
+
+public class Time {
+    private int hr, min, sec;
+    {
+        hr = 0;
+        min = 0;
+        sec = 0;
+    }
+    Time(){
+
+    }
+    Time(int sec){
+        this.sec = sec;
+    }
+    Time(int sec, int min, int hr){
+        this.sec = sec;
+        this.min = min;
+        this.hr = hr;
+    }
+    void showTime() {
+        System.out.println(this.hr+" hours "+this.min+" minutes "+this.sec+" seconds ");
+    }
+    public static void main(String[] args) {
+        Time t1 = new Time();
+        Time t2 = new Time(30);
+        Time t3 = new Time(45,23,2);
+        t1.showTime();
+        t2.showTime();
+        t3.showTime();
+    }
+}
+
+5) Define a class Customer with instance variables id, name, mobile and email.
+Provide constructors to initialize members variables of Customer. Define first
+constructor with four arguments, and second constructor with three arguments
+leaving argument for email.
+
+Code:
+
+package constructors;
+
+public class Customer {
+    int id;
+    String name;
+    long mobileNo;
+    String email;
+    static int var;
+    {
+        this.id = ++var;
+    }
+    Customer(int id, String name, long mobileNo, String email){
+        this.id = id;
+        this.name = name;
+        this.mobileNo = mobileNo;
+        this.email = email;
+    }
+    Customer(int id, String name, long mobileNo){
+        this.id = id;
+        this.name = name;
+        this.mobileNo = mobileNo;
+    }
+    Customer(){
+
+    }
+    void ShowCustomerDetails(){
+        System.out.println("\nCustomer Id: "+this.id);
+        System.out.println("Customer Name: "+this.name);
+        System.out.println("Customer mobile number: "+this.mobileNo);
+        System.out.println("Customer Email: "+this.email);
+    }
+
+    public static void main(String[] args) {
+        Customer c1 = new Customer();
+        Customer c2 = new Customer(2,"Faizan",9568494023L, "faizan@gmail.com");
+        Customer c3 = new Customer(3,"Labiba",9560427851L);
+        Customer c4 = new Customer();
+        Customer c5 = new Customer();
+        c1.ShowCustomerDetails();
+        c2.ShowCustomerDetails();
+        c3.ShowCustomerDetails();
+        c4.ShowCustomerDetails();
+        c5.ShowCustomerDetails();
+    }
+}
