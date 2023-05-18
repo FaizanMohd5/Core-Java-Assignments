@@ -1,4 +1,7 @@
-1)
+1) Define a Java class Person with private instance variables name and age. Also define
+setters and getters (as protected members). Define Employee class by extending Person
+with property salary. Also define public methods input and display Employee's name, age 
+and salary.
 
 Code:
 
@@ -43,7 +46,33 @@ public class Main {
     }
 }
 
-2) 
+2) Define a class Account with properties account number and balance as private members.
+Also define protected methods to access balance. Write a class Customer with account 
+and customer name as private instance members. Define public methods to deposit, withdraw 
+and check balance. Both the classes should reside in different packages. If you are facing
+problem in implementing this problem then propose an idea to resolve the issue, also
+implement your idea.
+
+Code:
+
+3) Define two classes Learner and Admin to represent users of an online learning platform.
+Implement concept of generalisation and introduce a super class of Learner and Admin. Take
+the liberty to decide number of members of the classes.
+
+Code:
+
+
+4) Define a class Cicle with radius as instance variable. Provide setter and getter.
+Also define methods to calculate area of circle. Dreate a class ThickCircle as a subclass
+of Circle with instance variable thickness. Define method to calculate thickness area of 
+circle and hollow space area of circle.
+
+Code:
+
+
+5) Define a class Contact with instance variables name and mobile. Provide setters and 
+getters in the class. Create a class DetailedContact as a subclass to provide additional
+properties like email and date of birth. Provide setters and getters in the class.
 
 Code:
 
