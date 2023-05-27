@@ -55,11 +55,58 @@ implement your idea.
 
 Code:
 
+package extra;
+
+public class Account {
+    private int accountNumber;
+    private float balance;
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+    protected float getBalance() {
+        return balance;
+    }
+    protected void setBalance(float balance) {
+        this.balance = balance;
+    }
+}
+
+package Inheritance;
+import extra.Account;
+public class Customer extends Account{
+    private Account account;
+    private String customerName;
+    public void depositMoney(float amount) {
+        setBalance(getBalance()+amount);
+    }
+    public void withdrawMoney(float amount) {
+        setBalance(getBalance()-amount);
+    }
+    public void checkBalance()  {
+        System.out.println("Your current bank balance is "+getBalance());
+    }
+
+    public static void main(String[] args) {
+        Customer c1 = new Customer();
+        c1.setAccountNumber(1331334563);
+        c1.setBalance(56000f);
+        c1.withdrawMoney(4000f);
+        c1.checkBalance();
+        c1.depositMoney(6000f);
+        c1.checkBalance();
+    }
+}
+
+
 3) Define two classes Learner and Admin to represent users of an online learning platform.
 Implement concept of generalisation and introduce a super class of Learner and Admin. Take
 the liberty to decide number of members of the classes.
 
 Code:
+
 
 
 4) Define a class Cicle with radius as instance variable. Provide setter and getter.
