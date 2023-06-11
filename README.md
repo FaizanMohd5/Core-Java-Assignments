@@ -1,1 +1,1 @@
-# Java-All-Topics-Programs
+# Core-Java-practice-programs
