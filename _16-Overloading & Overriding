@@ -137,7 +137,53 @@ public class Main {
  
  Code:
  
- 
+ package Inheritance.polymorph;
+import java.lang.Math;
+public class Coordinate {
+    private double x;
+    private double y;
+    public Coordinate() {
+        this.x = 0;
+        this.y = 0;
+    }
+    public Coordinate(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    public double getX() {
+        return x;
+    }
+    public double getY() {
+        return y;
+    }
+    public double getDistance()   {
+        return Math.sqrt( (x*x) + (y*y) ); //origin
+        //formula : root over x square plus y square
+    }
+    public double getDistance(Coordinate other)   {
+        //formula : root over (x2-x1) whole square plus (y2-y1) whole square
+        double x1 = other.getX();
+        double y1 = other.getY();
+        double x2 = this.getX();
+        double y2 = this.getY();
+
+        return Math.sqrt( Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2) );
+    }
+}
+
+package Inheritance;
+import Inheritance.polymorph.*;
+public class Main {
+    public static void main(String[] args) {
+        Coordinate c1 = new Coordinate(4.6,5.0);
+        Coordinate c2 = new Coordinate(3.5,8.7);
+
+        System.out.println("c1 : "+c1.getDistance()); //from origin
+
+        System.out.println("c2 : "+c2.getDistance(c1)); //from two points
+    }
+}
+
  
 5) Define a class Person with name as instance variable. Provide setter and getters.
  Provide overloaded versions of showName() method, one without argument to display name
@@ -145,4 +191,37 @@ public class Main {
  
  Code:
  
- 
+ package Inheritance.polymorph;
+
+public class Person {
+    private String name;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+    public void showName()  {
+        System.out.println(getName());
+    }
+    public void showName(String title)  {
+        System.out.println(title+" "+getName());
+    }
+}
+
+
+ package Inheritance;
+
+import Inheritance.polymorph.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        p1.setName("Faizan");
+        p1.showName();
+
+        Person p2 = new Person();
+        p2.setName("Yousuf");
+        p2.showName("Ms");
+    }
+}
