@@ -105,9 +105,74 @@ public class Customer extends Account{
 Implement concept of generalisation and introduce a super class of Learner and Admin. Take
 the liberty to decide number of members of the classes.
 
-Code:
+Code: // User is a generalized class of Admin and Learner
 
+package Inheritance;
 
+public class User {
+    private String username;
+    private String password;
+    private String email;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getUsername() {
+        return username;
+    }
+    public String getEmail() {
+        return email;
+    }
+}
+
+package Inheritance;
+
+public class Admin extends User{
+    private String role;
+    public static String OWNER = "Owner";
+    public static String EDUCATOR = "Educator";
+    public static String MANAGER = "Manager";
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+    public String getRole() {
+        return role;
+    }
+
+}
+
+package Inheritance;
+
+public class Learner extends User{
+    private int coursesEnrolled;
+    private void setCoursesEnrolled(int coursesEnrolled) {
+        this.coursesEnrolled++;
+    }
+}
+
+package Inheritance;
+
+public class Main {
+    public static void main(String[] args) {
+        Admin user1 = new Admin();
+        user1.setUsername("Faizan");
+        user1.setEmail("faizanmohammed416@gmail.com");
+        user1.setPassword("45ft*paa");
+        user1.setRole(Admin.MANAGER);
+
+        Learner user2 = new Learner();
+        user2.setUsername("Yousuf");
+        user2.setEmail("ysfhussain@gmail.com");
+        user2.setPassword("56$ff@gm");
+
+    }
+}
 
 4) Define a class Cicle with radius as instance variable. Provide setter and getter.
 Also define methods to calculate area of circle. Dreate a class ThickCircle as a subclass
@@ -117,9 +182,68 @@ circle and hollow space area of circle.
 Code:
 
 
+
 5) Define a class Contact with instance variables name and mobile. Provide setters and 
 getters in the class. Create a class DetailedContact as a subclass to provide additional
 properties like email and date of birth. Provide setters and getters in the class.
 
 Code:
 
+package Inheritance;
+
+public class Contact {
+    private String name;
+    private long mobileNo;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setMobileNo(long mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+    public String getName() {
+        return name;
+    }
+    public long getMobileNo() {
+        return mobileNo;
+    }
+}
+
+package Inheritance;
+
+import java.util.Date;
+public class DetailedContact extends Contact {
+    private String email;
+    private Date dob = new Date();
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public Date getDob() {
+        return dob;
+    }
+}
+
+package Inheritance;
+
+import java.sql.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        DetailedContact c1 = new DetailedContact();
+
+        c1.setName("Yousuf");
+        c1.setMobileNo(9567858905l);
+        c1.setEmail("ysfhussain@gmail.com");
+        c1.setDob(Date.valueOf("2003-10-07"));
+
+        System.out.println(c1.getName());
+        System.out.println(c1.getMobileNo());
+        System.out.println(c1.getEmail());
+        System.out.println(c1.getDob());
+    }
+}
