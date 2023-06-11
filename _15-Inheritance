@@ -181,6 +181,54 @@ circle and hollow space area of circle.
 
 Code:
 
+package Inheritance;
+class Circle {
+    private double radius;
+    private double area;
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    public double getRadius() {
+        return radius;
+    }
+    public void calculateArea()   {
+        this.area = 3.14*radius*radius;
+    }
+    public double getArea() {
+        calculateArea();
+        return area;
+    }
+}
+
+package Inheritance;
+
+class ThickCircle extends Circle {
+    private int thickness;
+    public void setThickness(int thickness) {
+        this.thickness = thickness;
+    }
+    public int getThickness() {
+        return thickness;
+    }
+    public double getThicknessArea()    {
+        return 3.14*(getRadius()+thickness)*(getRadius()+thickness)-getArea();
+    }
+    public double getHollowSpaceArea()  {
+        return getArea();
+    }
+}
+
+package Inheritance;
+
+public class Main {
+    public static void main(String[] args) {
+        ThickCircle c = new ThickCircle();
+        c.setRadius(5);
+        c.setThickness(2);
+        System.out.println("Hollow area: "+c.getHollowSpaceArea());
+        System.out.println("Thickness area: "+c.getThicknessArea());
+    }
+}
 
 
 5) Define a class Contact with instance variables name and mobile. Provide setters and 
