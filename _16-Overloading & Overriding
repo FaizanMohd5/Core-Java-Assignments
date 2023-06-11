@@ -5,6 +5,50 @@
 
 Code:
 
+package Inheritance.polymorph;
+
+public class Circle {
+    private double radius;
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+    public double getRadius()   {
+        return this.radius;
+    }
+    public double getArea()  {
+        return 3.14*radius*radius;
+    }
+}
+
+package Inheritance.polymorph;
+
+public class ThickCircle extends Circle{
+    private double thickness;
+    public void setThickness(double thickness)  {
+        this.thickness = thickness;
+    }
+    public double getThickness() {
+        return this.thickness;
+    }
+    @Override
+    public double getArea() {
+        return 3.14*(getRadius()+thickness)*(getRadius()+thickness)-super.getArea();
+    }
+}
+
+package Inheritance;
+
+import Inheritance.polymorph.ThickCircle;
+
+public class Main {
+    public static void main(String[] args) {
+        ThickCircle c = new ThickCircle();
+        c.setRadius(5);
+        c.setThickness(2);
+
+        System.out.println("Area of thickness of circle : "+c.getArea());
+    }
+}
 
 
 2) Define a class Person with name, age as instance variables. Define three 
