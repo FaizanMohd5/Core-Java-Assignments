@@ -1,0 +1,51 @@
+2) Define a class Person with name, age as instance variables. Define three 
+overloaded versions of setPerson() in the class as instance methods, first version take
+name only, second version take age only, and third version take both.
+
+Code:
+
+package Inheritance.polymorph;
+
+public class Person {
+    private String name;
+    private int age;
+    public void setPerson(String name) {
+        this.name = name;
+    }
+    public void setPerson(int age)  {
+        this.age = age;
+    }
+    public void setPerson(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+package Inheritance;
+
+import Inheritance.polymorph.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        p1.setPerson(12);
+
+        Person p2 = new Person();
+        p2.setPerson("Jake");
+
+        Person p3 = new Person();
+        p3.setPerson("AJ",25);
+    }
+}
+
+3) Define a rectangle calss with length, breadth and border colour as instance variables.
+Provide instance methods setLength(), setBreadth(), setColour(), getLength(), getBreadth(),
+ getColour() and printRectangleColout(). Create a subclass FilledRectangle of rectangle class
+ with fill colour (inside region of rectangle) as instance variable. Provide setters and getters
+ along with overridden method printRectangleColour() to display border colour as well as filled
+ colour.
+ 
+ Code:
+ 
+ 
+ 4) 
