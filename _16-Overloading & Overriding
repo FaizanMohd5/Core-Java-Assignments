@@ -1,3 +1,12 @@
+1) Define a Java class Circle with radius as instance variable and setRadius(), getRadius(),
+ getArea() as instance method. Define a class ThickCircle as a subclass of Circle with
+ thickness as instance variable and getThickness(), setThickness() as instance methods. 
+ Provide an overridden method getArea() to calculate area of thick portion of circle.
+
+Code:
+
+
+
 2) Define a class Person with name, age as instance variables. Define three 
 overloaded versions of setPerson() in the class as instance methods, first version take
 name only, second version take age only, and third version take both.
@@ -47,5 +56,93 @@ Provide instance methods setLength(), setBreadth(), setColour(), getLength(), ge
  
  Code:
  
+ package Inheritance.polymorph;
+
+public class Rectangle {
+    private double length;
+    private double breadth;
+    private String borderColour;
+    public void setLength(double length)    {
+        this.length = length;
+    }
+    public void setBreadth(double breadth)  {
+        this.breadth = breadth;
+    }
+    public void setBorderColour(String borderColour)    {
+        this.borderColour = borderColour;
+    }
+    public double getLength()   {
+        return length;
+    }
+    public double getBreadth() {
+        return breadth;
+    }
+    public String getBorderColour() {
+        return borderColour;
+    }
+    public void printRectangleColour()  {
+        System.out.println("Rectangle Colour : "+borderColour);
+    }
+}
+
+package Inheritance.polymorph;
+
+public class FilledRectangle extends Rectangle{
+    private String filledColour;
+    public void setFilledColour(String filledColour) {
+        this.filledColour = filledColour;
+    }
+    public String getFilledColour() {
+        return filledColour;
+    }
+    @Override
+    public void printRectangleColour() {
+        System.out.println("Border colour : "+super.getBorderColour());
+        System.out.println("Filled colour : "+filledColour);
+    }
+}
+
+package Inheritance;
+import Inheritance.polymorph.*;
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("ref var : Derived class, object : Derived class");
+        FilledRectangle r1 = new FilledRectangle();
+        r1.setBorderColour("Black");
+        r1.setFilledColour("Grey");
+
+        r1.printRectangleColour(); // overridden method binded
+
+
+        System.out.println("\nref var : Base class, object : Derived class");
+        Rectangle r2 = new FilledRectangle();
+        r2.setBorderColour("Green");
+        r2.printRectangleColour();
+        // In case of C++ we had to use virtual function
+
+        System.out.println("\nref var : Base class, object : Base class");
+        Rectangle r3 = new Rectangle();
+        r3.setBorderColour("Red");
+        r3.printRectangleColour();
+        // base class method works here (which is correct)
+    }
+}
+
+
+4) Define a class Coordinate with x and y as instance variables. Define overloaded 
+ versions of getDistance(), first with no argument calculating distance from origin, and 
+ second with one argument of Coordinate type to calculate distance between two coordinates.
+ Also define other methods if required.
  
- 4) 
+ Code:
+ 
+ 
+ 
+5) Define a class Person with name as instance variable. Provide setter and getters.
+ Provide overloaded versions of showName() method, one without argument to display name
+ of the person and second with one argument title ("Mr" or "Ms) to display name with title.
+ 
+ Code:
+ 
+ 
