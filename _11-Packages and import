@@ -37,6 +37,17 @@ public class Dummy {
     }
 }
 
+        OR
+       
+import java.lang.Math;       
+public class Dummy {       
+    public static void main(String args[])  {
+        double d = Math.random()*100+100;               //research random()
+        System.out.println((int)d);
+    }
+}
+
+
 4) WAP a calculate roots of quadratic equation.
 Code:
 
@@ -67,14 +78,14 @@ public class Dummy {
     }
 }
 
-5) Create two Java files A1.java and B1.java, A1 as main class. A! and B1
+5) Create two Java files A1.java and B1.java, A1 as main class. A1 and B1
 resides in different packages p1 and p2 respectively. Define a method
 in fb1() in B1 class which prints hello. Instantiate B! class in main 
 method of A1 class and invoke fb1() method.
 
 Code:
 
-A1.java
+A1.java  
 
 package p1;
 
@@ -87,7 +98,7 @@ public class A1 {
     }
 }
 
-A2.java
+B1.java
 
 package p2;
 
