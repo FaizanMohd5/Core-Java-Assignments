@@ -102,7 +102,7 @@ public class Circle {
         return radius * radius * 3.14f;
     }
     public float getCircumference() {
-        return 2*getArea();
+        return 2*3.14*radius;
     }
 }
 
