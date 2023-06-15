@@ -1,0 +1,210 @@
+1) Define a Java class Person with name and age as instance variables. 
+Provide parameterized constructor with two formal arguments name & age, to 
+initialise instance variables.
+
+Code:
+
+package Inheritance.ConstructorsInheritance;
+
+public class Person {
+    private String name;
+    private int age;
+    public Person() {
+
+    }
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Person parameterized constructor");
+    }
+}
+
+package Inheritance;
+
+import Inheritance.ConstructorsInheritance.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person("Faizan",19);
+    }
+}
+
+2) Define a Circle class with radius as instance variable and PI as 
+static-final variable. Use static block to initialize the value of PI.
+Use initialization block to set default value of radius 5. Also define 
+setRadius(), getRadius() and getArea().
+
+Code:
+
+package Inheritance.ConstructorsInheritance;
+
+public class Circle {
+    private double radius;
+    public static final double PI;
+    static {
+        PI = 3.141;
+    }
+    {
+        this.radius = 5;
+    }
+    public void setRadius(double radius) {
+
+        this.radius = radius;
+    }
+    public double getRadius() {
+
+        return radius;
+    }
+    public double getArea()   {
+
+        return PI*this.radius*this.radius;
+    }
+}
+
+package Inheritance;
+
+import Inheritance.ConstructorsInheritance.Circle;
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c1 = new Circle();
+        System.out.println("Radius (initialization block) : "+c1.getRadius());
+        System.out.println("PI (static block) : "+Circle.PI);
+        System.out.println("Area of circle : "+c1.getArea());
+    }
+}
+
+
+3) Define a super-class Person with name and age as instanve variables.
+Provide two constructors, one without arguments and another with two arguments.
+No argument constructor should call parameterized constructor with dummy arguments.
+Define a sub-class Employee with salary as instance variable. Provide two constructors,
+one with no argument and another with one argument for salary. No constructor should 
+call parameterized constructor of the same class by passing dummy data. Also define
+methods to show Employee data.
+
+Code:
+
+package Inheritance.ConstructorsInheritance;
+
+public class Person {
+    private String name;
+    private int age;
+    public Person() {
+        this("Faizan",20);
+        System.out.println("Person non-parameterized constructor");
+    }
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Person parameterized constructor");
+    }
+}
+
+package Inheritance.ConstructorsInheritance;
+
+public class Employee extends Person{
+    private double salary;
+    public Employee()  {
+        this(50000.0);
+        System.out.println("Employee non-parameterized constructor");
+    }
+    public Employee(double salary) {
+        this.salary = salary;
+        System.out.println("Employee parameterized constructor");
+    }
+    public void display()  {
+        System.out.println("salary : "+this.salary);
+    }
+}
+
+package Inheritance;
+
+import Inheritance.ConstructorsInheritance.Employee;
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.display();
+    }
+}
+
+4) Demonstrate how to resolve name conflict among local variable, instance variable
+of sub-class and instance of super-class.
+
+Code:
+
+package Inheritance.ConstructorsInheritance;
+
+public class Person {
+    String name = "Person name";
+}
+
+package Inheritance.ConstructorsInheritance;
+
+public class Employee extends Person{
+    String name = "Employee name";
+
+    public void f1()    {
+        String name = "Blank";
+
+        System.out.println("Local name : "+name);
+        System.out.println("Sub-class name : "+this.name);
+        System.out.println("Super-class name : "+super.name);
+    }
+}
+
+package Inheritance;
+
+import Inheritance.ConstructorsInheritance.Employee;
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.f1();
+    }
+}
+
+
+5) Demonstrate how to invoke super-class version of method from an overridden method
+in sub-class.
+ 
+Code:
+
+// SUPER CLASS
+
+package Inheritance.ConstructorsInheritance;
+
+public class Person {
+    String name = "Person name";
+    public void showName()    {
+        System.out.println(name);
+    }
+}
+
+// SUB CLASS
+
+package Inheritance.ConstructorsInheritance;
+
+public class Employee extends Person{
+    String name = "Employee name";
+    @Override
+    public void showName()    {
+        super.showName();
+        System.out.println(name);
+    }
+
+}
+
+// Main class
+
+package Inheritance;
+
+import Inheritance.ConstructorsInheritance.Employee;
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.showName();
+    }
+}
