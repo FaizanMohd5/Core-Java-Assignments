@@ -80,13 +80,13 @@ public class Customer extends Account{
     private Account account;
     private String customerName;
     public void depositMoney(float amount) {
-        setBalance(getBalance()+amount);
+        account.setBalance(account.getBalance()+amount);
     }
     public void withdrawMoney(float amount) {
-        setBalance(getBalance()-amount);
+        account.setBalance(account.getBalance()-amount);
     }
     public void checkBalance()  {
-        System.out.println("Your current bank balance is "+getBalance());
+        System.out.println("Your current bank balance is "+account.getBalance());
     }
 
     public static void main(String[] args) {
