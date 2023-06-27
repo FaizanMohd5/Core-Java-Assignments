@@ -1,0 +1,96 @@
+package abstracts;
+
+abstract class Account {
+    private double balance;
+    private int accountNo;
+    static double ROI = 12.0;
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    public void setAccountNo(int accountNo) {
+        this.accountNo = accountNo;
+    }
+    public static void setROI(double ROI) {
+        Account.ROI = ROI;
+    }
+    public double getBalance()  {
+        return balance;
+    }
+    public int getAccountNo()    {
+        return accountNo;
+    }
+    public static double getROI()   {
+        return ROI;
+    }
+    abstract public void calculateInterest(int time);
+}
+
+package abstracts;
+
+class SavingAccount extends Account{
+    private String customerName;
+    @Override
+    public void calculateInterest(int time) {
+        System.out.println("Interest("+time+" years): "+(super.getBalance() * time * getROI())/100);
+    }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+    public String getCustomerName() {
+        return customerName;
+    }
+}
+
+package abstracts;
+
+public class Driver {
+    public static void main(String[] args) {
+        SavingAccount s1 = new SavingAccount();
+        s1.setAccountNo(455524671);
+        s1.setBalance(45000.0);
+        s1.setCustomerName("Alice");
+        //Can set ROI also
+        System.out.println("Account Number: "+s1.getAccountNo());
+        System.out.println("Balance: "+s1.getBalance());
+        System.out.println("Customer Name: "+s1.getCustomerName());
+        s1.calculateInterest(2);
+        System.out.println("ROI: "+SavingAccount.getROI());
+
+        Account s2 = new SavingAccount();
+        s2.setAccountNo(454325621);
+        s2.setBalance(50000.0);
+        //Can set ROI also
+        System.out.println("\nAccount Number: "+s2.getAccountNo());
+        System.out.println("Balance: "+s2.getBalance());
+        s2.calculateInterest(1);
+        System.out.println("ROI: "+Account.getROI());
+    }
+}
+
+INTERVIEW QUESTIONS : 
+
+Q) CAN ABSTRACT MODIFIER APPLICABLE FOR VARIABLES ?
+A)  NO. ONLY FOR CLASSES AND METHOD.
+
+Q) CAN ABSTRACT METHOD BE DECLARED AS STATIC ?
+A)  NO. ILLLEGAL COMBINATION OF STATIC AND ABSTRACT.
+
+Q) WHAT IS CONCRETE METHOD?
+A) A METHOD WHICH IS NON-ABSTRACT IN AN ABSTRACT CLASS
+
+Q) CAN ABSTRACT CLASS HAVE CONSTRUCTOR?
+A) YES. ABSTRACT CLASSES CAN HAVE CONSTRUCTOR.
+
+Q) CAN WE DEFINE AN ABSTRACT METHOD INSIDE NON-ABSTRACT CLASS?
+A) NO. FOR ABSTRACT METHOD TO EXIST IN A CLASS, THE CLASS MUST BE ABSTRACT.
+    HOWEVER WE CAN DEFINE ABSTRACT METHOD IN SUBCLASS BY OVERRIDING THE ABSTRACT METHOD.
+TRUE OR FALSE:
+
+Q) A CLASS WITHOUT ABSTRACT METHOD CANNOT BE AN ABSTRACT CLASS. 
+A)  FALSE
+
+Q) A CLASS CONTAINING ABSTRACT METHOD MUST BE AN ABSTRACT CLASS.
+A)  TRUE
+
+Q) AN ABSTRACT METHOD IS ALWAYS A FINAL METHOD
+A)  NO. ABSTRACT METHOD IS NOT FINAL METHOD INFACT IT CANNOT BE DECLARED AS FINAL.
