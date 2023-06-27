@@ -83,7 +83,9 @@ public class Customer extends Account{
         account.setBalance(account.getBalance()+amount);
     }
     public void withdrawMoney(float amount) {
-        account.setBalance(account.getBalance()-amount);
+if(account.getBalance()-amount>0)               account.setBalance(account.getBalance()-amount);
+else
+    System.out.println("insufficient amount");
     }
     public void checkBalance()  {
         System.out.println("Your current bank balance is "+account.getBalance());
