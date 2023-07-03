@@ -1,0 +1,312 @@
+1) WAP to take N integers as an input and store them in an array of size N. Also display them.
+
+Code:
+
+import java.util.Scanner;
+
+public class Arrays {
+    public static void main(String[] args) {
+        int n;
+        System.out.print("Enter size of array: ");
+        Scanner sr = new Scanner(System.in);
+        n = sr.nextInt();
+        int []a = new int[n];
+        System.out.println("Enter "+n+" elements:");
+        for(int i=0; i<n; i++)
+            a[i]= sr.nextInt();
+        for(int i=0; i<n; i++)
+            System.out.print(a[i]+" ");
+    }
+}
+
+
+2) Write a java method to find greatest number stored in an array of size N.
+
+Code:
+
+import java.util.Scanner;
+
+public class Array1 {
+    public int greatestInArray(int []arr){
+        int max = arr[0];
+        for(int i=1; i<arr.length; i++)
+            if(arr[i]>max)
+                max=arr[i];
+        return max;
+    }
+
+    public static void main(String[] args) {
+        Scanner sr = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sr.nextInt();
+        int []a = new int[n];
+        System.out.println("Enter "+n+" elements: ");
+        for(int i=0; i<n; i++)
+            a[i]= sr.nextInt();
+
+        Array1 a1 = new Array1();
+        System.out.println("Greatest in array: "+a1.greatestInArray(a));
+    }
+}
+
+
+3) Write a Java method to find smallest number stored in an array of size N.
+
+Code:
+
+import java.util.Scanner;
+
+public class Array1 {
+    public int smallestInArray(int []arr){
+        int min = arr[0];
+        for(int i=1; i<arr.length; i++)
+            if(arr[i]<min)
+                min=arr[i];
+        return min;
+    }
+
+    public static void main(String[] args) {
+        Scanner sr = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sr.nextInt();
+        int []a = new int[n];
+        System.out.println("Enter "+n+" elements: ");
+        for(int i=0; i<n; i++)
+            a[i]= sr.nextInt();
+
+        Array1 a1 = new Array1();
+        System.out.println("Smallest in array: "+a1.smallestInArray(a));
+    }
+}
+
+4) Write a java method to calculate sum of numbers stored in an array of size N.
+
+Code:
+
+import java.util.Scanner;
+
+public class Array1 {
+    public int calculateSum(int []a){
+        int sum=0;
+        for(int i=0; i<a.length; i++)
+            sum = sum + a[i];
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sr = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sr.nextInt();
+        int []a = new int[n];
+        System.out.println("Enter "+n+" elements: ");
+        for(int i=0; i<n; i++)
+            a[i]= sr.nextInt();
+
+        Array1 a1 = new Array1();
+        System.out.println("Sum of array elements : "+a1.calculateSum(a));
+    }
+}
+
+5) Write a Java method to calculate average of N numbers stored in an array of size N.
+
+Code:
+
+import java.util.Scanner;
+
+public class Array1 {
+    public float calculateAverage(int []a){
+        int avg=0;
+        for(int i=0; i<a.length; i++)
+            avg = avg + a[i];
+        return avg/a.length;
+    }
+
+    public static void main(String[] args) {
+        Scanner sr = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sr.nextInt();
+        int []a = new int[n];
+        System.out.println("Enter "+n+" elements: ");
+        for(int i=0; i<n; i++)
+            a[i]= sr.nextInt();
+
+        Array1 a1 = new Array1();
+        System.out.println("Average of array elements : "+a1.calculateAverage(a));
+    }
+}
+
+6) Write a java method to find the frequency of a given number in an array of N numbers.
+
+Code:
+
+import java.util.Scanner;
+
+public class Array1 {
+    public int frequency(int []a,int e){
+        int count=0;
+        for(int i=0; i<a.length; i++)
+            if(e==a[i])
+                count++;
+        return count;
+    }
+
+    public static void main(String[] args) {
+        System.out.print("Enter size of array:");
+        Scanner sr = new Scanner(System.in);
+        int n = sr.nextInt();
+
+        System.out.println("Enter Array elements:");
+        int []a = new int[n];
+        for(int i=0; i<n; i++)
+            a[i] = sr.nextInt();
+
+        System.out.print("Frequency of element: ");
+        int element = sr.nextInt();
+        Array1 e = new Array1();
+        System.out.println("Frequency of "+element+": "+e.frequency(a,element));
+    }
+}
+
+7) Write a Java method to sort an array of size N.
+
+Code:
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Array1 {
+    public void bubbleSort(int []a){
+        int temp;
+        for(int i=0; i<a.length-1; i++){
+            for(int j=i+1; j<a.length; j++){
+                if(a[i]>a[j]){
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.print("Enter size of array:");
+        Scanner sr = new Scanner(System.in);
+        int n = sr.nextInt();
+
+        System.out.println("Enter Array elements:");
+        int []a = new int[n];
+        for(int i=0; i<n; i++)
+            a[i] = sr.nextInt();
+
+        Array1 e = new Array1();
+        System.out.println("After sorting: ");
+        e.bubbleSort(a);
+        for(int i=0; i<a.length; i++)
+            System.out.println(a[i]+" ");
+    }
+}
+
+8) Write a Java method to calculate sum of only even numbers stored in an array of size N.
+
+Code:
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Array1 {
+    public int evenSum(int []a){
+        int sum=0;
+
+        for(int i=0; i<a.length; i++)
+            if(a[i]%2==0)
+                sum=sum+a[i];
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.print("Enter size of array:");
+        Scanner sr = new Scanner(System.in);
+        int n = sr.nextInt();
+
+        System.out.println("Enter Array elements:");
+        int []a = new int[n];
+        for(int i=0; i<n; i++)
+            a[i] = sr.nextInt();
+
+        Array1 e = new Array1();
+
+        System.out.println("Sum of all even numbers in array: "+e.evenSum(a));
+    }
+}
+
+9) Define a Java class Employee with id, name and salary as instance variables. 
+Provide setters and getters. Now define a method to sort an array of Employees
+according to their salaries.
+
+Code:
+
+class Employee{
+    private int id;
+    private String name;
+    private double salary;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getSalary() {
+        return salary;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    public static void sortSalaries(Employee []e){
+        Employee temp;
+        for(int i=0; i<e.length-1; i++){
+            for(int j=i+1; j<e.length; j++){
+                if(e[i].salary>e[j].salary){
+                    temp = e[i];
+                    e[i] = e[j];
+                    e[j] = temp;
+                }
+            }
+        }
+    }
+}
+public class Array1 {
+    public static void main(String[] args) {
+        Employee []e = new Employee[3];
+
+        e[0] = new Employee();
+        e[1] = new Employee();
+        e[2] = new Employee();
+
+        for(int i=0;i<e.length;i++){
+            e[i].setId(i+1);
+            e[i].setName("E"+i);
+        }
+        e[0].setSalary(40000.0);
+        e[1].setSalary(60000.0);
+        e[2].setSalary(20000.0);
+
+        Employee.sortSalaries(e);
+
+        for(int i=0;i<e.length;i++){
+            System.out.println(e[i].getId()+" "+e[i].getName()+" "+e[i].getSalary());
+        }
+    }
+}
+
+
+10) In the above question, define a method to sort an array of Employees according to their names.
+
+Code:
+
