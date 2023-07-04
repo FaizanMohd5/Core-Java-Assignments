@@ -310,3 +310,66 @@ public class Array1 {
 
 Code:
 
+import java.lang.String;
+class Employee{
+    private int id;
+    private String name;
+    private double salary;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getSalary() {
+        return salary;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    public int compareTo(Employee emp){
+        return this.name.compareTo(emp.getName());
+    }
+    public static void sortNames(Employee []e){
+        Employee temp;
+        for(int i=0; i<e.length-1; i++){
+            for(int j=i+1; j<e.length; j++){
+                if(e[i].getName().compareTo(e[j].getName())>0){
+                    temp = e[i];
+                    e[i] = e[j];
+                    e[j] = temp;
+                }
+            }
+        }
+    }
+}
+public class Array1 {
+    public static void main(String[] args) {
+        Employee []e = new Employee[3];
+
+        e[0] = new Employee();
+        e[1] = new Employee();
+        e[2] = new Employee();
+
+        for(int i=0;i<e.length;i++){
+            e[i].setId(i+1);
+            e[i].setSalary(50000.0*(i+2));
+        }
+        e[0].setName("Kevin");
+        e[1].setName("Austin");
+        e[2].setName("Kane");
+
+        Employee.sortNames(e);
+
+        for(int i=0;i<e.length;i++){
+            System.out.println(e[i].getId()+" "+e[i].getName()+" "+e[i].getSalary());
+        }
+    }
+}
+
