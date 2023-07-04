@@ -26,3 +26,63 @@ public class Strings {
 
 Code:
 
+public class Strings {
+    public static String reverseString(String s){
+        int i=0;
+        int j=s.length()-1;
+        char []st = new char[s.length()];
+        while(i<=j){
+            char temp=s.charAt(i);
+            st[i] = s.charAt(j);
+            st[j] = temp;
+            i++;
+            j--;
+        }
+        return new String(st);
+    }
+    public static void main(String[] args) {
+        String str = "Reverse the string"; // 4 vowels
+        str = Strings.reverseString(str);
+        System.out.println(str);
+        Class<?> objClass = str.getClass();   //For getting the type of object
+        System.out.println(objClass.getName());
+    }
+}
+
+
+3) Write a Java method to count occurence of a given pattern in a given string.
+
+Code:
+
+
+
+4) Write a Java method to check whether a given string is palindrome or not
+
+Code:
+
+public class Strings {
+    public static boolean isPalindrome(String s)
+    {
+        int i=0, j=s.length()-1;
+        while(i<=j){
+            if(s.charAt(i)!=s.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        String s1 = "radaar";
+        String s2 = "radar";
+        System.out.println(s1+" is "+(Strings.isPalindrome(s1)?"Palindrome":"Not palindrome"));
+        System.out.println(s2+" is "+(Strings.isPalindrome(s2)?"Palindrome":"Not palindrome"));
+    }
+}
+
+
+5) Write a Java method to count words in a string.
+
+Code:
+
+
