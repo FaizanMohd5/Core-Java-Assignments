@@ -54,6 +54,21 @@ public class Strings {
 
 Code:
 
+public class Strings {
+    public static int countOccurrenceOfPattern(String str,String pattern){
+        int i,count=0;
+        for(i=0;i<str.length()-pattern.length()-1;i++){
+            if(str.substring(i,i+pattern.length()).equals(pattern))
+                count++;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        String str = "abdjfgklaab klglrkabflkjgtlkjvbanabablgjgksla"; 
+        String pattern = "ab";
+        System.out.println("Occurence of "+pattern+" is "+Strings.countOccurrenceOfPattern(str,pattern));
+    }
+}
 
 
 4) Write a Java method to check whether a given string is palindrome or not
@@ -85,4 +100,10 @@ public class Strings {
 
 Code:
 
-
+public class Strings {
+    public static void main(String[] args) {
+        String str = "I am a new developer";
+        String[] listOfStrings = str.split(" ");
+        System.out.println("Number of words in string: "+listOfStrings.length);
+    }
+}
