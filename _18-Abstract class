@@ -22,7 +22,7 @@ abstract class Account {
     public static double getROI()   {
         return ROI;
     }
-    abstract public void calculateInterest(int time);
+    public abstract void calculateInterest(int time);
 }
 
 package abstracts;
