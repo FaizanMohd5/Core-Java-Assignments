@@ -1,29 +1,68 @@
-1) WAP 
-
-Code:
+1) Write a java method to Create an Array of N integers and find the average of elements.
+Handle the possible exceptions and make program robust.
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exceptions {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        float avg=0;
-        int n=0;
+    public void readArray() throws InputMismatchException{
+        int n;
+        float averageOfArray=0;
         System.out.println("Enter size of array:");
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        int[] array = new int[n];
+        System.out.println("Enter "+"integers:");
+        for (int j : array) {
+            int temp = sc.nextInt();
+            array[j] = temp;
+            averageOfArray += array[j];
+        }
+        averageOfArray/=array.length;
+        System.out.println("Average of Array:"+averageOfArray);
+    }
+    public static void main(String[] args) {
+        Exceptions function = new Exceptions();
         try {
-            n = sc.nextInt();
-            System.out.println("Enter array elements:");
-            int[] array = new int[n];
-            for (int i = 0; i < n; i++) {
-                array[i]=sc.nextInt();
-                avg += array[i];
-            }
+            function.readArray();
         }
-        catch(InputMismatchException e){
-            System.out.println("Input is not an integer");
+        catch(InputMismatchException mismatchException){
+            System.out.println("Not an integer. Try again.");
         }
-        avg /= n;
-        System.out.println("Average of numbers in array: "+avg);
     }
 }
+
+2) WAP to calculate factorial of a integer and handle all the exceptions. 
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exceptions {
+    public static int factorial(int n){
+        if(n<0)
+            throw new ArithmeticException();
+        if(n==0||n==1)
+            return 1;
+        return n * factorial(n - 1);
+    }
+    public static void main(String[] args) {
+        int n=0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        try {
+            n = sc.nextInt();
+            System.out.println(n+"!="+factorial(n));
+        }
+        catch(InputMismatchException inputMismatchException){
+            System.out.println("Input is not an integer.");
+        }
+        catch (ArithmeticException arithmeticException){
+            System.out.println("Negative numbers can't be evaluated for factorial.");
+        }
+        catch (StackOverflowError stackOverflowError){
+            System.out.println("Too big integer.");
+        }
+    }
+}
+
+
